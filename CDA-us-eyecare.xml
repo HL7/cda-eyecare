@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="" defaultVersion="current" defaultWorkgroup="" url="http://hl7.org/cda/us/eyecare">
+<version code="current" url=""/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="StructureDefinition/EyecareExamSection" key="StructureDefinition-EyecareExamSection" name="EyecareExamSection"/>
+<artifact id="ValueSet/VisualAcuityMethodCodes" key="ValueSet-VisualAcuityMethodCodes" name="VisualAcuityMethodCodes"/>
+<artifact id="StructureDefinition/VisualAcuityObservation" key="StructureDefinition-VisualAcuityObservation" name="VisualAcuityObservation"/>
+<artifact id="ValueSet/VisualAcuityObservationCodes" key="ValueSet-VisualAcuityObservationCodes" name="VisualAcuityObservationCodes"/>
+<artifact id="StructureDefinition/VisualAcuityOrganizer" key="StructureDefinition-VisualAcuityOrganizer" name="VisualAcuityOrganizer"/>
+<artifact id="ValueSet/VisualAcuityTargetSiteCodes" key="ValueSet-VisualAcuityTargetSiteCodes" name="VisualAcuityTargetSiteCodes"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page key="index" name="Home"/>
+<page key="toc" name="Table of Contents"/>
+</specification>
