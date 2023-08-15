@@ -4,8 +4,9 @@ Alias: $ResultOrganizer = http://hl7.org/cda/us/ccda/StructureDefinition/2.16.84
 Profile: EyecareExamSection
 Parent: $PhysicalExamSection
 Id: EyecareExamSection
+* ^kind = #logical
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "$this"
 * entry ^slicing.rules = #open
 * entry contains resultOrganizer 1..1
-* entry[resultOrganizer] only $ResultOrganizer
+* entry[resultOrganizer].organizer only $ResultOrganizer
