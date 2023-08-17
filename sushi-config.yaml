@@ -6,8 +6,8 @@
 id: hl7.cda.us.eyecare
 canonical: http://hl7.org/cda/us/eyecare
 name: CDAEyecare
-# title: Example Title
-# description: Example Implementation Guide for getting started with SUSHI
+title: Specialty Eyecare CDA Implementation Guide
+description: This guide provides CDA templates in StructureDefinition format for Eyecare results.
 status: draft # draft | active | retired | unknown
 version: 0.1.0
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html

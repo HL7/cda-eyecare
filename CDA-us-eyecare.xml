@@ -4,6 +4,8 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="ValueSet/AidToVisionCodes" key="ValueSet-AidToVisionCodes" name="AidToVisionCodes"/>
+<artifact id="StructureDefinition/AidToVisionObservation" key="StructureDefinition-AidToVisionObservation" name="AidToVisionObservation"/>
 <artifact id="StructureDefinition/EyecareExamSection" key="StructureDefinition-EyecareExamSection" name="EyecareExamSection"/>
 <artifact id="ValueSet/VisualAcuityMethodCodes" key="ValueSet-VisualAcuityMethodCodes" name="VisualAcuityMethodCodes"/>
 <artifact id="StructureDefinition/VisualAcuityObservation" key="StructureDefinition-VisualAcuityObservation" name="VisualAcuityObservation"/>
