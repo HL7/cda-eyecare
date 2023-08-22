@@ -4,17 +4,22 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="ValueSet/AidToVisionCodes" key="ValueSet-AidToVisionCodes" name="AidToVisionCodes"/>
+<artifact id="ValueSet/AidToVisionCodes" key="ValueSet-AidToVisionCodes" name="Aid to Vision Codes"/>
 <artifact id="StructureDefinition/AidToVisionObservation" key="StructureDefinition-AidToVisionObservation" name="AidToVisionObservation"/>
+<artifact id="ValueSet/EyecareTargetSiteCodes" key="ValueSet-EyecareTargetSiteCodes" name="Eyecare Target Site Codes"/>
 <artifact id="StructureDefinition/EyecareExamSection" key="StructureDefinition-EyecareExamSection" name="EyecareExamSection"/>
-<artifact id="ValueSet/VisualAcuityMethodCodes" key="ValueSet-VisualAcuityMethodCodes" name="VisualAcuityMethodCodes"/>
+<artifact id="ValueSet/RefractionMethodCodes" key="ValueSet-RefractionMethodCodes" name="Refraction Method Codes"/>
+<artifact id="ValueSet/RefractionObservationCodes" key="ValueSet-RefractionObservationCodes" name="Refraction Observation Codes"/>
+<artifact id="StructureDefinition/RefractionObservation" key="StructureDefinition-RefractionObservation" name="RefractionObservation"/>
+<artifact id="StructureDefinition/RefractionOrganizer" key="StructureDefinition-RefractionOrganizer" name="RefractionOrganizer"/>
+<artifact id="ValueSet/VisualAcuityMethodCodes" key="ValueSet-VisualAcuityMethodCodes" name="Visual Acuity Method Codes"/>
+<artifact id="ValueSet/VisualAcuityObservationCodes" key="ValueSet-VisualAcuityObservationCodes" name="Visual Acuity Observation Codes"/>
 <artifact id="StructureDefinition/VisualAcuityObservation" key="StructureDefinition-VisualAcuityObservation" name="VisualAcuityObservation"/>
-<artifact id="ValueSet/VisualAcuityObservationCodes" key="ValueSet-VisualAcuityObservationCodes" name="VisualAcuityObservationCodes"/>
 <artifact id="StructureDefinition/VisualAcuityOrganizer" key="StructureDefinition-VisualAcuityOrganizer" name="VisualAcuityOrganizer"/>
-<artifact id="ValueSet/VisualAcuityTargetSiteCodes" key="ValueSet-VisualAcuityTargetSiteCodes" name="VisualAcuityTargetSiteCodes"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
+<page key="usecases" name="Eyecare Use Cases"/>
 <page key="index" name="Home"/>
 <page key="toc" name="Table of Contents"/>
 </specification>

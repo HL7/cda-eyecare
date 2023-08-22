@@ -44,6 +44,8 @@ dependencies:
 pages:
   index.md:
     title: Home
+  usecases.md:
+    title: Eyecare Use Cases
 
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
@@ -68,6 +70,7 @@ pages:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Usecases: usecases.html
   Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
