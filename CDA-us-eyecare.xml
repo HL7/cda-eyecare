@@ -6,6 +6,10 @@
 <artifactPageExtension value="-mappings"/>
 <artifact id="ValueSet/AidToVisionCodes" key="ValueSet-AidToVisionCodes" name="Aid to Vision Codes"/>
 <artifact id="StructureDefinition/AidToVisionObservation" key="StructureDefinition-AidToVisionObservation" name="AidToVisionObservation"/>
+<artifact id="CodeSystem/DryEyeTestAssessmentCodes" key="CodeSystem-DryEyeTestAssessmentCodes" name="Dry Eye Test Assessment Code System"/>
+<artifact id="ValueSet/DryEyeTestAssessmentCodes" key="ValueSet-DryEyeTestAssessmentCodes" name="Dry Eye Test Assessment Value Set"/>
+<artifact id="StructureDefinition/DryEyeTestObservation" key="StructureDefinition-DryEyeTestObservation" name="DryEyeTestObservation"/>
+<artifact id="StructureDefinition/DryEyeTestsOrganizer" key="StructureDefinition-DryEyeTestsOrganizer" name="DryEyeTestOrganizer"/>
 <artifact id="ValueSet/EyecareTargetSiteCodes" key="ValueSet-EyecareTargetSiteCodes" name="Eyecare Target Site Codes"/>
 <artifact id="StructureDefinition/EyecareExamSection" key="StructureDefinition-EyecareExamSection" name="EyecareExamSection"/>
 <artifact id="ValueSet/RefractionMethodCodes" key="ValueSet-RefractionMethodCodes" name="Refraction Method Codes"/>

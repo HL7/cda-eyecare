@@ -9,4 +9,4 @@ Description: "A constraint on Physical Exam Section that allows for specific eye
 * entry ^slicing.discriminator.path = "$this"
 * entry ^slicing.rules = #open
 * entry contains resultOrganizer 1..1
-* entry[resultOrganizer].organizer only VisualAcuityOrganizer or RefractionOrganizer
+* entry[resultOrganizer].organizer only VisualAcuityOrganizer or RefractionOrganizer or DryEyeTestOrganizer
