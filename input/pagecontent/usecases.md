@@ -16,4 +16,4 @@ Posterior Segment are represented by a [PosteriorSegmentOrganizer](StructureDefi
 
 ### Examples
 
-We have included both an example of a [CCD document with Eyecare information included](eyecare-ccd.xml) and the [HTML representation of this CCD](eyecare-ccd.html).
+We have included an example of a [CCD HTML representation with eyecare information](eyecare-ccd.html).
