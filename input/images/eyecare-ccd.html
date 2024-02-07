@@ -1,0 +1,2031 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Do NOT edit this HTML directly: it was generated via an XSLT transformation from a CDA Release 2 or 3 XML document. -->
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <title>Eyecare Progress Note - Proposed Data Representations (March 6, 2020, 10:30AM -0500)</title><!-- General CSS -->
+      <style type="text/css" media="all">
+                    *{
+                        font-family: Verdana, Tahoma, sans-serif;
+                        font-size: 9pt;
+                    }
+                    body{
+                        padding: 2px;
+                        color: #003366;
+                        background-color: white;
+                        font-size: 9pt;
+                    }
+                    #documentheader,
+                    #documentbody,
+                    #documentfooter{
+                        width: 100%;
+                    }
+                    #documentheader{
+                        border-bottom: 1px solid grey;
+                        margin-bottom: 1em;
+                    }
+                    #documentfooter{
+                        border-top: 1px solid grey;
+                        margin-top: 1em;
+                    }
+                    a{
+                        color: #003366;
+                        background-color: white;
+                    }
+                    h1{
+                        font-size: 12pt;
+                        font-weight: bold;
+                    }
+                    h1.title{
+                        text-align: center;
+                    }
+                    h2{
+                        font-size: 11pt;
+                        font-weight: bold;
+                    }
+                    h3{
+                        font-size: 10pt;
+                        font-weight: bold;
+                    }
+                    h4{
+                        font-size: 9pt;
+                        font-weight: bold;
+                    }
+                    h5{
+                        font-size: 9pt;
+                        font-weight: bold;
+                    }
+                    h6{
+                        font-size: 9pt;
+                        font-weight: bold;
+                    }
+                    hr{
+                        width: 100%;
+                    }
+                    span {
+                        font-size: 9pt; /* IE8 hack: doesn't understand inheritance */
+                        display: inline; /* IE8 hack: would go to next line otherwise */
+                    }
+                    table{
+                        line-height: 10pt;
+                        width: 100%;
+                    }
+                    thead tr, th{
+                        background-color: LightGrey;
+                    }
+                    tbody tr{
+                        background-color: #f2f2f2;
+                    }
+                    td{
+                        font-size: 9pt; /* IE8 hack: doesn't understand inheritance */
+                        padding: 0.1cm 0.2cm;
+                        vertical-align: top;
+                    }
+                    .table_simple{
+                        width: auto;
+                        color: inherit;
+                        background-color: inherit;
+                    }
+                    .table_simple td{
+                        padding: 0;
+                    }
+                    .table_simple td.td_label{
+                        font-size: 9pt; /* IE8 hack: doesn't understand inheritance */
+                        font-weight: inherit;
+                        font-style: italic;
+                        padding-right: 0.2cm;
+                    }
+                    .has_provenance td,
+                    .has_provenance:not(:empty):not(table),
+                    .has_provenance:focus:after {
+                        text-decoration: underline grey dashed;
+                        text-decoration-thickness: 0.01em;
+                    }
+                    .has_provenance:focus:after {
+                            content: attr(title);
+                            white-space: break-spaces;
+                            padding: 2px;
+                            display: block;
+                            position: relative;
+                            text-align: left;
+                            background-color: #fef4c5;
+                            border: 1px solid #d4b943;
+                            border-radius: 2px;
+                            font-weight: normal;
+                            color: black;
+                            font-size: 10pt;
+                            line-height: 12pt;
+                            width: fit-content;
+                    }
+                    tr.has_provenance:focus:after {
+                           width: max-content;
+                    }
+                    
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        .has_provenance td,
+                        .has_provenance:not(:empty):not(table),
+                        .has_provenance:focus:after {
+                            text-decoration: underline;
+                        }
+                        .has_provenance:focus:after {
+                            white-space: pre;
+                            display: table;
+                            width: auto;
+                        }
+                    }
+                    .header_table{
+                        border: 1pt solid #00008b;
+                    }
+                    .narr_table{
+                        width: 100%;
+                        margin: 0.3em 0;
+                    }
+                    .narr_tr{
+                        //background-color: #ffffcc;
+                    }
+                    .narr_th{
+                        background-color: LightGrey;
+                        font-size: 9pt; /* IE8 hack: doesn't understand inheritance */
+                    }
+                    .narr_footnote{
+                        font-size: 8pt;
+                        font-style: italic;
+                    }
+                    .td_label{
+                        font-size: 9pt; /* IE8 hack: doesn't understand inheritance */
+                        font-weight: bold;
+                        background-color: LightGrey;
+                    }
+                    .td_label_width{
+                        width: 20%;
+                    }
+                    .span_label{
+                        font-size: 9pt; /* IE8 hack: doesn't understand inheritance */
+                        font-weight: bold;
+                    }
+                    .span_value{
+                        font-size: 9pt; /* IE8 hack: doesn't understand inheritance */
+                        font-weight: normal;
+                    }
+                    .revision_insert{
+                        text-decoration: underline overline;
+                    }
+                    .revision_insert_final{
+                    }
+                    .revision_delete{
+                        text-decoration: line-through;
+                    }
+                    .revision_delete_final{
+                        display: none;
+                    }
+                    .span_button {
+                        display: table-cell;
+                        cursor: pointer;
+                        border: 2pt inset #585858;
+                        border-radius: 15px;
+                        -moz-border-radius: 15px;
+                        padding: 0.1cm 0.2cm;
+                        background-color: #f2f2f2;
+                        font-weight: bold;
+                        vertical-align: baseline;
+                        width: 150px;
+                    }
+                    div.separator {
+                        height: 1em;
+                    }
+                    div.caption {
+                        font-weight: bold;
+                        text-align: center;
+                    }
+                </style><!-- Stylecode CSS -->
+      <style type="text/css" media="all">
+                    .Bold{
+                        font-weight: bold;
+                    }
+                    .Italics{
+                        font-style: italic;
+                    }
+                    .Underline{
+                        text-decoration: underline;
+                    }
+                    .Emphasis{
+                        font-weight: bold;
+                        font-style: italic;
+                    }
+                    .Lrule{
+                        border-left-width: 2px;
+                        border-left-style: solid;
+                    }
+                    .Rrule{
+                        border-right-width: 2px;
+                        border-right-style: solid;
+                    }
+                    .Toprule{
+                        border-top-width: 2px;
+                        border-top-style: solid;
+                    }
+                    .Botrule{
+                        border-bottom-width: 2px;
+                        border-bottom-style: solid;
+                    }
+                    .Arabic{
+                        list-style: arabic;
+                    }
+                    .LittleRoman{
+                        list-style: lower-roman;
+                    }
+                    .BigRoman{
+                        list-style: upper-roman;
+                    }
+                    .LittleAlpha{
+                        list-style: lower-alpha;
+                    }
+                    .BigAlpha{
+                        list-style: upper-alpha
+                    }
+                    .Disc{
+                        list-style: disc;
+                    }
+                    .Circle{
+                        list-style: circle;
+                    }
+                    .Square{
+                        list-style: square;
+                    }</style><!-- Section Button Toggle CSS -->
+      <style type="text/css" media="screen">
+                    div.button.expandCollapse {
+                        float: left;
+                        margin-right: 10px;
+                        cursor: pointer;
+                    }
+                </style><!-- Revision Toggle CSS -->
+      <style type="text/css" media="print">
+                    button, 
+                    div.button,
+                    #buttontable {
+                        display: none;
+                    }
+                    div.section-content {
+                        display: block !important;
+                    }
+                    .print_visible {
+                        display: block;
+                        float: none;
+                        margin-right: 0;
+                    }
+                </style><!-- Table of Contents CSS -->
+      <style type="text/css" media="screen">
+                    #nav, #nav ul {
+                        padding: 0;
+                        margin: 0;
+                        list-style: none;
+                    }
+                    
+                    #nav li {
+                        float: left;
+                        width: 300px;
+                    }
+                    #nav ul {
+                        position: absolute;
+                        width: 300px;
+                        left: -1000px;
+                    }
+                    #nav li ul li ul {
+                        display: none;
+                    }
+                    
+                    #nav li ul li:hover > ul {
+                        display: block;
+                        position: absolute;
+                        left: 50px !important;
+                    }
+                    #nav li ul li:hover > ul > li > a {
+                        border: 1px solid #585858;
+                    }
+                    
+                    #nav li:hover ul, #nav li.ie_does_hover ul {
+                        left: auto;
+                        background-position: 0 0;
+                    }
+                    
+                    #nav * a {
+                        display: block;
+                        padding: 2px 8px;
+                        text-decoration: none;
+                        font-weight: bold;
+                        font-size: 11px;
+                    }
+                    
+                    #nav ul * a {
+                        font-weight: bold;
+                        color: #585858;
+                        background-color: #f2f2f2;
+                        cursor: pointer;
+                    }
+                    
+                    #nav ul ul a:link, #nav ul ul a:visited {
+                        font-weight: normal;
+                        color: #585858;
+                        background-color: #f2f2f2;
+                        cursor: pointer;
+                    }
+                    
+                    #nav * li a:hover, #nav * li a:active,
+                    #nav * li * li a:hover, #nav * li * li a:active {
+                        /*font-weight: normal;*/
+                        color: white;
+                        background-color: #585858;
+                        cursor: pointer;
+                    }
+                    
+                    #nav * li {
+                        border-left: 2px solid white;
+                    }
+                    
+                    #nav * ul li {
+                        border-top: 2px solid white;
+                        border-left: 0;
+                    }
+                    
+                    /* IE only hack */
+                    * html ul li, * html ul ul li{
+                        border-bottom: 2px solid white;
+                    }
+                    
+                    * html ul ul li{
+                        border-top: 0;
+                    }
+                    /* End IE only hack */
+                </style><!-- Javascript for Revisions switch -->
+      <script type="text/javascript">var gStringCollapse = "Collapse"; var gStringExpand = "Expand";
+                        function expandAllSections() {
+                            var toggleButtons = document.getElementsByClassName("expandCollapse");
+                            if (toggleButtons != null) {
+                                var i = 0;
+                                while (i != toggleButtons.length) {
+                                    expandSection(toggleButtons[i]);
+                                    i++;
+                                }
+                            }
+                            toggle('sectionsToggleExpand');
+                            toggle('sectionsToggleCollapse');
+                        }
+                        function expandSection(sectionTitleButton) {
+                            sectionTitleButton.title = gStringCollapse;
+                            sectionTitleButton.innerText = '▼';
+                            sectionTitleButton.onclick = function (){collapseSection(this);};
+                            var sectionContent = sectionTitleButton.parentElement.parentElement.children[1]
+                            if (sectionContent != null) {
+                                sectionContent.style.display = '';
+                            }
+                        }
+                        function collapseAllSections() {
+                            var toggleButtons = document.getElementsByClassName("expandCollapse");
+                            if (toggleButtons != null) {
+                                var i = 0;
+                                while (i != toggleButtons.length) {
+                                    collapseSection(toggleButtons[i]);
+                                    i++;
+                                }
+                            }
+                            toggle('sectionsToggleExpand');
+                            toggle('sectionsToggleCollapse');
+                        }
+                        function collapseSection(sectionTitleButton) {
+                            sectionTitleButton.title = gStringExpand;
+                            sectionTitleButton.innerText = '▶';
+                            sectionTitleButton.onclick = function (){expandSection(this);};
+                            var sectionContent = sectionTitleButton.parentElement.parentElement.children[1]
+                            if (sectionContent != null) {
+                                sectionContent.style.display = 'none';
+                            }
+                        }
+                        function showReviewMarks() {
+                            var allHTMLTags=document.getElementsByTagName("*");
+                            for (i in allHTMLTags) {
+                                //Get all tags with the specified class name.
+                                if (allHTMLTags[i].className=='revision_insert_final') {
+                                    allHTMLTags[i].className = 'revision_insert';
+                                }
+                                if (allHTMLTags[i].className=='revision_delete_final') {
+                                    allHTMLTags[i].className = 'revision_delete';
+                                }
+                            }
+                            toggle('revisionToggleOn');
+                            toggle('revisionToggleOff');
+                        }
+                        function hideReviewMarks() {
+                            var allHTMLTags=document.getElementsByTagName("*");
+                            for (i in allHTMLTags) {
+                                //Get all tags with the specified class name.
+                                if (allHTMLTags[i].className=='revision_insert') {
+                                    allHTMLTags[i].className = 'revision_insert_final';
+                                }
+                                if (allHTMLTags[i].className=='revision_delete') {
+                                    allHTMLTags[i].className = 'revision_delete_final';
+                                }
+                            }
+                            toggle('revisionToggleOn');
+                            toggle('revisionToggleOff');
+                        }
+                        function toggle(obj) {
+                            var el = document.getElementById(obj);
+                            el.style.display = (el.style.display != 'none' ? 'none' : '' );
+                        }
+                        </script><!-- Javascript for Table of Contents menu -->
+      <script type="text/javascript">
+                        sfHover = function() {
+                            var sfEls = document.getElementById("nav").getElementsByTagName("li");
+                            for (i in sfEls) {
+                                sfEls[i].onmouseover=function() {
+                                    this.className+=" ie_does_hover";
+                                }
+                                sfEls[i].onmouseout=function() {
+                                    this.className=this.className.replace(new RegExp(" ie_does_hover"), "");
+                                }
+                            }
+                        }
+                        if (window.attachEvent) window.attachEvent("onload", sfHover);
+                    </script>
+   </head>
+   <body>
+      <div id="documentheader">
+         <a id="_toc"> </a>
+         <h1 class="title">Eyecare Progress Note - Proposed Data Representations (March 6, 2020, 10:30AM -0500)</h1>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label">Patient</td>
+                  <td>
+                     <span class="span_value">Legal: Clare  M  TESCA</span>
+                     <span style="float: right; margin-left: 1em;">
+                        <span>
+                           <span class="span_label">Date of Birth: </span>
+                           <span class="span_value">October  22, 1962<span title="At document creation time"> (57yr)</span>
+                           </span>
+                        </span>
+                        <span class="span_label">Gender: </span>
+                        <span class="span_value">Female</span>
+                     </span>
+                     <span style="float: right;" class="print_visible">
+                        <span class="span_label">Patient-ID: </span>
+                        <span class="span_value">
+                           <span title="US Social Security Administration">123456789 (SSN)</span>, <span>404.1 (1.3.6.1.4.1.115)</span>
+                        </span>
+                     </span>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="td_label">Encounter</td>
+                  <td>
+                     <span class="span_label">ID: </span>
+                     <span class="span_value">
+                        <span>a5b48f7f-981c-480f-aa35-fb14a34e528e</span>
+                     </span>, <span class="span_label">Date/Time: </span>
+                     <span class="span_value">March  6, 2020 10:30AM -0500 - 11:30AM -0500</span>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="td_label">Documentation Of</td>
+                  <td>Care provision, <span class="span_value">First postoperative examination and eye dressing (procedure)</span>, <span class="span_label">Date/Time: </span>
+                     <span class="span_value">March  6, 2020 10:30AM -0500 - 11:30AM -0500</span>, <span class="span_label">Performer: </span>
+                     <span class="span_value">Stan  STEDYHAN</span>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="td_label">Author</td>
+                  <td>
+                     <span class="span_value">Dr Stan  STEDYHAN</span>, <span class="span_label">Organization: </span>
+                     <span class="span_value">Stedyhan Ophthalmology, LLC</span>, <span class="span_label">Authored On: </span>
+                     <span class="span_value">March  6, 2020, 11:30AM -0500</span>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <div id="buttontable">
+            <table border="0" cellpadding="0" cellspacing="0">
+               <tbody>
+                  <tr>
+                     <td xmlns:xhtml="http://www.w3.org/1999/xhtml" style="width: 35%; background-color: white;">
+                        <ul id="nav">
+                           <li style="list-style: none;">
+                              <div class="span_button">Table of Contents ∇</div>
+                              <ul>
+                                 <li>
+                                    <a href="#section_1">ASSESSMENTS</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_2">TREATMENT PLAN</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_3">VITAL SIGNS (no information)</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_4">SOCIAL HISTORY (no information)</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_5">ENCOUNTERS</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_6">ALLERGIES (no information)</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_7">MEDICATIONS</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_8">PHYSICAL EXAMINATION ▶</a>
+                                    <ul>
+                                       <li style="padding-left: 2em;">
+                                          <a href="#section_8.1">PHYSICAL FINDINGS OF EYE ▶</a>
+                                          <ul>
+                                             <li style="padding-left: 2em;">
+                                                <a href="#section_8.1.1">VISUAL ACUITY</a>
+                                             </li>
+                                             <li style="padding-left: 2em;">
+                                                <a href="#section_8.1.2">REFRACTION</a>
+                                             </li>
+                                             <li style="padding-left: 2em;">
+                                                <a href="#section_8.1.3">DIAGNOSTIC ASSESSMENT TESTS</a>
+                                             </li>
+                                             <li style="padding-left: 2em;">
+                                                <a href="#section_8.1.4">POSTERIOR SEGMENT</a>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <a href="#section_9">PATIENT CARE TEAMS</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_10">PAYERS (no information)</a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </td>
+                     <td xmlns:xhtml="http://www.w3.org/1999/xhtml" style="background-color: white;">
+                        <div id="sectionsToggleExpand" style="display: none;" class="span_button" onclick="expandAllSections();">Expand All</div>
+                        <div id="sectionsToggleCollapse" class="span_button" onclick="collapseAllSections();">Collapse All</div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <div id="documentbody">
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="margin-left: 0em;" class="section">
+            <div class="section-title">
+               <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+               <h3 id="section_1" title="ASSESSMENTS">ASSESSMENTS</h3>
+            </div>
+            <div class="section-content">
+               <div class="section-body">
+                  <div>Entries removed from this example. Focus is on sections with eye-care content only.</div>
+               </div>
+            </div>
+         </div>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="margin-left: 0em;" class="section">
+            <div class="section-title">
+               <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+               <h3 id="section_2" title="Treatment plan">TREATMENT PLAN</h3>
+            </div>
+            <div class="section-content">
+               <div class="section-body">
+                  <div>Entries removed from this example. Focus is on sections with eye-care content only.</div>
+               </div>
+            </div>
+         </div>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="margin-left: 0em;" class="section">
+            <div class="section-title">
+               <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+               <h3 id="section_3" title="VITAL SIGNS">VITAL SIGNS</h3>
+            </div>
+            <div class="section-content">
+               <div class="section-body">
+                  <div>No Information</div>
+               </div>
+            </div>
+         </div>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="margin-left: 0em;" class="section">
+            <div class="section-title">
+               <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+               <h3 id="section_4" title="SOCIAL HISTORY NARRATIVE">SOCIAL HISTORY</h3>
+            </div>
+            <div class="section-content">
+               <div class="section-body">
+                  <div>No Information</div>
+               </div>
+            </div>
+         </div>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="margin-left: 0em;" class="section">
+            <div class="section-title">
+               <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+               <h3 id="section_5" title="History of encounters">ENCOUNTERS</h3>
+            </div>
+            <div class="section-content">
+               <div class="section-body">
+                  <div>
+						
+                     <table class="narr_table" cellspacing="1" cellpadding="1">
+							
+                        <thead>
+								
+                           <tr class="narr_tr">
+									
+                              <th class="narr_th">Encounter</th>
+									
+                              <th class="narr_th">Performer</th>
+									
+                              <th class="narr_th">Location</th>
+									
+                              <th class="narr_th">Encounter date</th>
+									
+                              <th class="narr_th">Diagnosis</th>
+									
+                              <th class="narr_th">Diagnosis Status</th>
+								
+                           </tr>
+							
+                        </thead>
+							
+                        <tbody>
+								
+                           <tr class="narr_tr has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020, 11:30AM -0500&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="Encounter1">
+									
+                              <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020, 11:30AM -0500&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="Encounter1Description">Post Op follow-up</td>
+									
+                              <td>Dr. Stan Stedyhan</td>
+									
+                              <td>33 Front St.
+										<p>Atlanta, GA  30308</p>
+									
+                              </td>
+									
+                              <td>March 06, 2020</td>
+									
+                              <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020, 11:30AM -0500&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="Encounter1Diagnosis">Normal vision</td>
+									
+                              <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020, 11:30AM -0500&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="Encounter1Status">Active</td>
+								
+                           </tr>
+							
+                        </tbody> 
+						
+                     </table>
+					
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="margin-left: 0em;" class="section">
+            <div class="section-title">
+               <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+               <h3 id="section_6" title="Allergies, adverse reactions, alerts">ALLERGIES</h3>
+            </div>
+            <div class="section-content">
+               <div class="section-body">
+                  <div>No Information</div>
+               </div>
+            </div>
+         </div>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="margin-left: 0em;" class="section">
+            <div class="section-title">
+               <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+               <h3 id="section_7" title="History of Medication use Narrative">MEDICATIONS</h3>
+            </div>
+            <div class="section-content">
+               <div class="section-body">
+                  <div>
+						
+                     <span class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020, 11:30AM -0500&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="MedicationNone">No medications</span>
+					
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="margin-left: 0em;" class="section">
+            <div class="section-title">
+               <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+               <h3 id="section_8" title="Physical Findings">PHYSICAL EXAMINATION</h3>
+            </div>
+            <div class="section-content">
+               <div class="section-body">
+                  <div/>
+                  <div style="margin-left: 2em;" class="section">
+                     <div class="section-title">
+                        <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+                        <h3 id="section_8.1" title="Physical findings of Eye Narrative">PHYSICAL FINDINGS OF EYE</h3>
+                     </div>
+                     <div class="section-content">
+                        <div class="section-body">
+                           <div/>
+                           <div style="margin-left: 4em;" class="section">
+                              <div class="section-title">
+                                 <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+                                 <h3 id="section_8.1.1" title="Visual acuity">VISUAL ACUITY</h3>
+                              </div>
+                              <div class="section-content">
+                                 <div class="section-body">
+                                    <div>							
+										
+                                       <p>
+                                          <span class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUncorrected1">Uncorrected visual acuity on 2020-03-06 at 08:00a</span>
+                                       </p>
+										
+                                       <table class="narr_table" cellspacing="1" cellpadding="1" width="100%" border="1">
+											
+                                          <colgroup>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+											
+                                          </colgroup>									
+											
+                                          <thead>
+												
+                                             <tr class="narr_tr">
+													
+                                                <th class="narr_th">Method</th>
+													
+                                                <th class="narr_th">Eye</th>
+													
+                                                <th class="narr_th">Distance VA</th>
+													
+                                                <th class="narr_th">Near VA</th>
+													
+                                                <th class="narr_th">Pinhole</th>
+												
+                                             </tr>
+											
+                                          </thead>
+											
+                                          <tbody>
+												
+                                             <tr class="narr_tr" id="VAU1">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUMethod1">Snellen Chart</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUEye1">OD:</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUDistance1">20/80</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUNear1">20/40</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUPinhole1">20/20</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="VAU2">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUMethod2">Snellen Chart</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUEye2">OS:</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUDistance2">20/100</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUNear2">20/30</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUPinhole2">20/25</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="VAU3">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUMethod3">Snellen Chart</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUEye3">OU:</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUDistance3">20/80</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VAUNear3">20/30</td>
+													
+                                                <td/>
+												
+                                             </tr>
+											
+                                          </tbody>
+										
+                                       </table>
+										
+                                       <br/>
+										
+                                       <p>
+											
+                                          <span class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACorrected1">Corrected visual acuity on 2020-03-06 at 08:00a</span>
+											
+                                          <br/>
+											
+                                          <span class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACAid1">Aid to vision (Eye glasses)</span>
+										
+                                       </p>							
+										
+                                       <table class="narr_table" cellspacing="1" cellpadding="1" width="100%" border="1">
+											
+                                          <colgroup>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+											
+                                          </colgroup>									
+											
+                                          <thead>
+												
+                                             <tr class="narr_tr">
+													
+                                                <th class="narr_th">Method</th>
+													
+                                                <th class="narr_th">Eye</th>
+													
+                                                <th class="narr_th">Distance VA</th>
+													
+                                                <th class="narr_th">Near VA</th>
+													
+                                                <th class="narr_th">Pinhole</th>
+												
+                                             </tr>
+											
+                                          </thead>
+											
+                                          <tbody>
+												
+                                             <tr class="narr_tr" id="VAC1">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACMethod1">Snellen Chart</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACEye1">OD:</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACDistance1">20/20</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACNear1">J1</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACPinhole1">NIPH</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="VAC2">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACMethod2">Snellen Chart</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACEye2">OS:</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACDistance2">20/25</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACNear2">J1+</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACPinhole2">NIPH</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="VAC3">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACMethod3">Snellen Chart</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACEye3">OU:</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACDistance3">20/20</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="VACNear3">J1+</td>
+													
+                                                <td/>
+												
+                                             </tr>
+											
+                                          </tbody>
+										
+                                       </table>																	
+									
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div style="margin-left: 4em;" class="section">
+                              <div class="section-title">
+                                 <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+                                 <h3 id="section_8.1.2" title="Refraction">REFRACTION</h3>
+                              </div>
+                              <div class="section-content">
+                                 <div class="section-body">
+                                    <div>
+										
+                                       <p>
+                                          <span class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxMeasurements1">Refraction measurements on 2020-03-06 at 08:15a</span>
+                                       </p>
+										
+                                       <table class="narr_table" cellspacing="1" cellpadding="1" width="100%" border="1">
+											
+                                          <colgroup>										
+												
+                                             <col width="10%"/>
+												
+                                             <col width="10%"/>
+												
+                                             <col width="10%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+											
+                                          </colgroup>
+											
+                                          <thead>
+												
+                                             <tr class="narr_tr">
+													
+                                                <th class="narr_th">Method</th>
+													
+                                                <th class="narr_th">Eye</th>
+													
+                                                <th class="narr_th">Usage</th>
+													
+                                                <th class="narr_th">Sphere</th>
+													
+                                                <th class="narr_th">Cylinder</th>
+													
+                                                <th class="narr_th">Axis</th>
+													
+                                                <th class="narr_th">H Prism</th>
+													
+                                                <th class="narr_th">H Prism base</th>
+													
+                                                <th class="narr_th">V Prism</th>
+													
+                                                <th class="narr_th">V Prism base</th>
+													
+                                                <th class="narr_th">Add</th>
+													
+                                                <th class="narr_th">Distance VA</th>
+													
+                                                <th class="narr_th">Near VA</th>
+													
+                                                <th class="narr_th">Pinhole</th>
+												
+                                             </tr>
+											
+                                          </thead>
+											
+                                          <tbody>
+												
+                                             <tr class="narr_tr" id="RM1">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxMethod1">Manifest Refraction</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxEye1">OD:</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxUsage1">Computer Glasses</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxSphere1">-1.25</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxCylinder1">-0.75</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxAxis1">162</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxHPrism1">0.50</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxHPrismBase1">BI</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxVPrism1">0.75</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxVPrismBase1">BU</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxAdd1">+1.00</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxDistanceVA1">20/25--</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxNearVA1">20/20+</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxPinhole1">20/20--</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="RM2">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxMethod2">Manifest Refraction</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxEye2">OS:</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxUsage2">Computer Glasses</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxSphere2">-2.75</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxCylinder2">-1.75</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxAxis2">068</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxHPrism2">0.50</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxHPrismBase2">BO</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxVPrism2">0.75</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxVPrismBase2">BD</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxAdd2">+1.00</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxDistanceVA2">20/25--</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxNearVA2">20/20+</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxPinhole2">20/20--</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="RM3">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxMethod3">Manifest Refraction</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxEye3">OU:</td>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxDistanceVA3">20/25--</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxNearVA3">20/20+</td>
+													
+                                                <td/>
+												
+                                             </tr>
+											
+                                          </tbody>
+										
+                                       </table>
+										
+                                       <table class="narr_table" cellspacing="1" cellpadding="1" width="100%" border="1">
+											
+                                          <colgroup>										
+												
+                                             <col width="10%"/>
+												
+                                             <col width="10%"/>
+												
+                                             <col width="10%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+												
+                                             <col width="5%"/>
+											
+                                          </colgroup>									
+											
+                                          <thead>
+												
+                                             <tr class="narr_tr">
+													
+                                                <th class="narr_th">Method</th>
+													
+                                                <th class="narr_th">Eye</th>
+													
+                                                <th class="narr_th">Usage</th>
+													
+                                                <th class="narr_th">Sphere</th>
+													
+                                                <th class="narr_th">Cylinder</th>
+													
+                                                <th class="narr_th">Axis</th>
+													
+                                                <th class="narr_th">H Prism</th>
+													
+                                                <th class="narr_th">H Prism base</th>
+													
+                                                <th class="narr_th">V Prism</th>
+													
+                                                <th class="narr_th">V Prism base</th>
+													
+                                                <th class="narr_th">Add</th>
+													
+                                                <th class="narr_th">Distance VA</th>
+													
+                                                <th class="narr_th">Near VA</th>
+													
+                                                <th class="narr_th">Pinhole</th>
+												
+                                             </tr>
+											
+                                          </thead>
+											
+                                          <tbody>
+												
+                                             <tr class="narr_tr" id="RM4">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxMethod4">Autorefractor</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxEye4">OD:</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxUsage4">Sunglasses</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxSphere4">-1.25</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxCylinder4">-0.75</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxAxis4">070</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxHPrism4">0.50</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxHPrismBase4">BI</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxVPrism4">0.75</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxVPrismBase4">BU</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxAdd4">+1.00</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxDistanceVA4">20/25--</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxNearVA4">20/20+</td>
+													
+                                                <td/>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="RM5">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxMethod5">Autorefractor</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxEye5">OS:</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxUsage5">Sunglasses</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxSphere5">-3.00</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxCylinder5">-1.75</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxAxis5">160</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxHPrism5">0.50</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxHPrismBase5">BO</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxVPrism5">0.75</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxVPrismBase5">BD</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxAdd5">+1.00</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxDistanceVA5">20/25--</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxNearVA5">20/20+</td>
+													
+                                                <td/>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="RM6">
+													
+                                                <td id="RxMethod6">Autorefractor</td>											
+													
+                                                <td id="RxEye6">OU:</td>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td/>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxDistanceVA6">20/25--</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RxNearVA6">20/20+</td>
+													
+                                                <td/>
+												
+                                             </tr>
+											
+                                          </tbody>
+										
+                                       </table>																		
+									
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div style="margin-left: 4em;" class="section">
+                              <div class="section-title">
+                                 <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+                                 <h3 id="section_8.1.3" title="Diagnostic assessment tests">DIAGNOSTIC ASSESSMENT TESTS</h3>
+                              </div>
+                              <div class="section-content">
+                                 <div class="section-body">
+                                    <div>
+										
+                                       <p>
+                                          <span id="Tonometry1">Tonometry (IOP)</span>
+                                       </p>
+										
+                                       <table class="narr_table" cellspacing="1" cellpadding="1" width="100%" border="1">
+											
+                                          <colgroup>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+											
+                                          </colgroup>									
+											
+                                          <thead>
+												
+                                             <tr class="narr_tr">
+													
+                                                <th class="narr_th">Method</th>
+													
+                                                <th class="narr_th">Eye</th>
+													
+                                                <th class="narr_th">Reading</th>
+													
+                                                <th class="narr_th">Reference Range</th>
+												
+                                             </tr>
+											
+                                          </thead>
+											
+                                          <tbody>
+												
+                                             <tr class="narr_tr has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="IOP1">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="IOPMethod1">NCT</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="IOPEye1">OD:</td>
+													
+                                                <td id="IOPResult1">21 mm[Hg]</td>
+													
+                                                <td>expected: 0 to 100 mm[Hg]</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="IOP2">
+													
+                                                <td id="IOPMethod2">NCT</td>
+													
+                                                <td id="IOPEye2">OS:</td>
+													
+                                                <td id="IOPResult2">18 mm[Hg]</td>
+													
+                                                <td>expected: 0 to 100 mm[Hg]</td>
+												
+                                             </tr>
+											
+                                          </tbody>
+										
+                                       </table>
+										
+                                       <br/>
+										
+                                       <p>
+                                          <span class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DryEye1">Dry eye tests</span>
+                                       </p>
+										
+                                       <table class="narr_table" cellspacing="1" cellpadding="1" width="100%" border="1">
+											
+                                          <colgroup>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+											
+                                          </colgroup>									
+											
+                                          <thead>
+												
+                                             <tr class="narr_tr">
+													
+                                                <th class="narr_th">Test</th>
+													
+                                                <th class="narr_th">Method</th>
+													
+                                                <th class="narr_th">Eye</th>
+													
+                                                <th class="narr_th">Results</th>
+													
+                                                <th class="narr_th">Reference Range</th>
+												
+                                             </tr>
+											
+                                          </thead>
+											
+                                          <tbody>
+												
+                                             <tr class="narr_tr" id="DET1">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETName1">Osmolarity</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETMethod1">Osmometer (720840007)</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETEye1">OD</td>
+													
+                                                <td>308 mOsm/L</td>
+													
+                                                <td>expected: 0 to 400 mOsm/L</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="DET2">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETName2">Osmolarity</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETMethod2">Osmometer (720840007)</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETEye2">OS</td>
+													
+                                                <td>300 mOsm/L</td>
+													
+                                                <td>expected: 0 to 400 mOsm/L</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="DET3">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETName3">Schirmer</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETMethod3">Filter paper (415500001)</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETEye3">OD</td>
+													
+                                                <td>15 mm</td>
+													
+                                                <td>expected: 0 to 15 mm</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="DET4">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETName4">Schirmer</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETMethod4">Filter paper (415500001)</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETEye4">OS</td>
+													
+                                                <td>16 mm</td>
+													
+                                                <td>expected: 0 to 15 mm</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="DET5">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETName5">Tear Break-up Time (TBUT)</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETMethod5">Sodium Fluorescein Dye (25351006)</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETEye5">OD</td>
+													
+                                                <td>11 seconds</td>
+													
+                                                <td>expected: 0 to 15 seconds</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="DET6">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETName6">Tear Break-up Time (TBUT)</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETMethod6">Sodium Fluorescein Dye (25351006)</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETEye6">OS</td>
+													
+                                                <td>10 seconds</td>
+													
+                                                <td>expected: 0 to 15 seconds</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="DET7">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETName7">Tear Meniscus</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETMethod7">Slit lamp photography of eye (16306001)</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETEye7">OD</td>
+													
+                                                <td>0.6 mm</td>
+													
+                                                <td/>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="DET8">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETName8">Tear Meniscus</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETMethod8">Slit lamp photography of eye (16306001)</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETEye8">OS</td>
+													
+                                                <td>0.4 mm</td>
+													
+                                                <td/>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="DET9">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETName9">Assessment score</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETMethod9">SPEED Questionnaire (273479001)</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="DETEye9">OU</td>
+													
+                                                <td>17</td>
+													
+                                                <td>expected: 0 to 28</td>
+												
+                                             </tr>
+											
+                                          </tbody>
+										
+                                       </table>							
+									
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div style="margin-left: 4em;" class="section">
+                              <div class="section-title">
+                                 <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+                                 <h3 id="section_8.1.4" title="Posterior segment">POSTERIOR SEGMENT</h3>
+                              </div>
+                              <div class="section-content">
+                                 <div class="section-body">
+                                    <div>
+										
+                                       <p>
+                                          <span class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="OpticDisc1">Optic Disc</span>
+                                       </p>
+										
+                                       <table class="narr_table" cellspacing="1" cellpadding="1" width="100%" border="1">
+											
+                                          <colgroup>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="60%"/>										
+											
+                                          </colgroup>									
+											
+                                          <thead>
+												
+                                             <tr class="narr_tr">
+													
+                                                <th class="narr_th">Finding</th>
+													
+                                                <th class="narr_th">Eye</th>
+													
+                                                <th class="narr_th">Result</th>
+												
+                                             </tr>
+											
+                                          </thead>
+											
+                                          <tbody>
+												
+                                             <tr class="narr_tr" id="CDRatio1">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="CDRatioFinding1">CD Ratio</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="CDRatioEye1">OD:</td>
+													
+                                                <td>Normal appearance with C/D ratio .3/.4</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="CDRatio2">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="CDRatioFinding2">CD Ratio</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="CDRatioEye2">OS:</td>
+													
+                                                <td>Normal appearance with C/D ratio .3/.3</td>
+												
+                                             </tr>
+											
+                                          </tbody>
+										
+                                       </table>
+										
+                                       <br/>
+										
+                                       <p>
+                                          <span class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="Macula1">Macula</span>
+                                       </p>
+										
+                                       <table class="narr_table" cellspacing="1" cellpadding="1" width="100%" border="1">
+											
+                                          <colgroup>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="60%"/>										
+											
+                                          </colgroup>									
+											
+                                          <thead>
+												
+                                             <tr class="narr_tr">
+													
+                                                <th class="narr_th">Finding</th>
+													
+                                                <th class="narr_th">Eye</th>
+													
+                                                <th class="narr_th">Result</th>
+												
+                                             </tr>
+											
+                                          </thead>
+											
+                                          <tbody>
+												
+                                             <tr class="narr_tr" id="MaculaRow1">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="MaculaFinding1">Drusen</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="MaculaEye1">OD:</td>
+													
+                                                <td>2+ drusen throughout the posterior pole</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="MaculaRow2">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="MaculaFinding2">Drusen</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="MaculaEye2">OS:</td>
+													
+                                                <td>1+ drusen throughout the posterior pole</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="MaculaRow3">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="MaculaFinding3">Epiretinal membrane</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="MaculaEye3">OS:</td>
+													
+                                                <td>Epiretinal membrane with macular thickening</td>
+												
+                                             </tr>
+											
+                                          </tbody>
+										
+                                       </table>							
+										
+                                       <br/>
+										
+                                       <p>
+                                          <span class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="Retina1">Posterior Retina</span>
+                                       </p>
+										
+                                       <table class="narr_table" cellspacing="1" cellpadding="1" width="100%" border="1">
+											
+                                          <colgroup>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="20%"/>										
+												
+                                             <col width="60%"/>										
+											
+                                          </colgroup>									
+											
+                                          <thead>
+												
+                                             <tr class="narr_tr">
+													
+                                                <th class="narr_th">Finding</th>
+													
+                                                <th class="narr_th">Eye</th>
+													
+                                                <th class="narr_th">Result</th>
+												
+                                             </tr>
+											
+                                          </thead>
+											
+                                          <tbody>
+												
+                                             <tr class="narr_tr" id="RetinaRow1">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RetinaFinding1">Cotton wool spots</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RetinaEye1">OD:</td>
+													
+                                                <td>Multiple cotton wool exudates superior temperal to the macula</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="RetinaRow2">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RetinaFinding2">Cotton wool spots</td>
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RetinaEye2">OS:</td>
+													
+                                                <td>Multiple cotton wool exudates superior to the macula</td>
+												
+                                             </tr>
+												
+                                             <tr class="narr_tr" id="RetinaRow3">
+													
+                                                <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="RetinaFinding3">Vessels</td>
+													
+                                                <td id="RetinaEye4">OS:</td>
+													
+                                                <td>Nicking and banking of vasculature</td>
+												
+                                             </tr>
+											
+                                          </tbody>
+										
+                                       </table>							
+									
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="margin-left: 0em;" class="section">
+            <div class="section-title">
+               <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+               <h3 id="section_9" title="PATIENT CARE TEAM INFORMATION">PATIENT CARE TEAMS</h3>
+            </div>
+            <div class="section-content">
+               <div class="section-body">
+                  <div>
+						
+                     <ul>
+                        <li>
+								
+                           <span class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020, 11:30AM -0500&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="CareTeamName1">Long Term Care Team</span> (
+								<span>Active</span>) (01/01/2005 - )								
+								<table class="narr_table" cellspacing="1" cellpadding="1">
+									
+                              <thead>
+										
+                                 <tr class="narr_tr">
+											
+                                    <th class="narr_th">Member</th>
+											
+                                    <th class="narr_th">Role on Team</th>
+											
+                                    <th class="narr_th">Status</th>
+											
+                                    <th class="narr_th">Date</th>
+										
+                                 </tr>
+									
+                              </thead>
+									
+                              <tbody>
+										
+                                 <tr class="narr_tr">
+											
+                                    <td>Dr. Joseph Gooddoc, MD (NPI: 2734441159 )</td>
+											
+                                    <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020, 11:30AM -0500&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="CT1_M01">Primary Care Physician</td>
+											
+                                    <td>(Active)</td>
+											
+                                    <td>2005 - current</td>
+										
+                                 </tr>
+										
+                                 <tr class="narr_tr">
+											
+                                    <td>Maka Felgood</td>
+											
+                                    <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020, 11:30AM -0500&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="CT1_M02">Diabetic Educator</td>
+											
+                                    <td>(Active)</td>
+											
+                                    <td>2014 - current</td>
+										
+                                 </tr>
+										
+                                 <tr class="narr_tr">
+											
+                                    <td>Dr. Arthur Feetler, DPM (NPI: 8402871106)</td>
+											
+                                    <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020, 11:30AM -0500&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="CT1_M03">Podiatrist</td>
+											
+                                    <td>(Active)</td>
+											
+                                    <td>2018 - current</td>
+										
+                                 </tr>
+										
+                                 <tr class="narr_tr">
+											
+                                    <td>Dr. Donald Singletooth, DDS (NPI: 8477778822)</td>
+											
+                                    <td class="has_provenance" title="Authored by: Dr Stan STEDYHAN&#xA;Authored on: March 6, 2020, 11:30AM -0500&#xA;Source organization: Stedyhan Ophthalmology, LLC" tabindex="0" id="CT1_M04">Dentist</td>
+											
+                                    <td>(Active)</td>
+											
+                                    <td>1990 - current</td>
+										
+                                 </tr>
+										
+                                 <tr class="narr_tr">
+											
+                                    <td>Dr. Yul Seemore, OD (NPI: 1973535929)</td>
+											
+                                    <td id="CT1_M05">Optometrist</td>
+											
+                                    <td>(Active)</td>
+											
+                                    <td>2020 - current</td>
+										
+                                 </tr>
+										
+                                 <tr class="narr_tr">
+											
+                                    <td>Dr. Stan Stedyhan, MD (NPI: 2173512387)</td>
+											
+                                    <td id="CT1_M06">Ophthalmologist</td>
+											
+                                    <td>(Active)</td>
+											
+                                    <td>2020 - current</td>
+										
+                                 </tr>
+									
+                              </tbody>
+								
+                           </table>
+							
+                        </li>
+                     </ul>
+					
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml" style="margin-left: 0em;" class="section">
+            <div class="section-title">
+               <div class="button expandCollapse" onclick="collapseSection(this)" title="Collapse">▼</div>
+               <h3 id="section_10" title="PAYMENT SOURCES DOCUMENT">PAYERS</h3>
+            </div>
+            <div class="section-content">
+               <div class="section-body">
+                  <div>No Information</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="documentfooter">
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Document</td>
+                  <td style="width: 30%;">
+                     <table class="table_simple">
+                        <tbody>
+                           <tr>
+                              <td class="td_label">ID</td>
+                              <td>
+                                 <span>107deb19-b5c9-4df2-ad4e-378ea1228dcd</span>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </td>
+                  <td class="td_label td_label_width">Created On</td>
+                  <td>March  6, 2020, 10:30AM -0500</td>
+               </tr>
+            </tbody>
+         </table>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Custodian</td>
+                  <td style="width: 30%;">Stedyhan Ophthalmology, LLC</td>
+                  <td class="td_label td_label_width">Contact Details</td>
+                  <td>33 Front St.<br/>Atlanta, Georgia 30308<br/>US<br/>Tel Workplace: +1-843-555-9898</td>
+               </tr>
+            </tbody>
+         </table>
+         <div class="separator"> </div>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Patient</td>
+                  <td style="width: 30%;">Legal: Clare  M  TESCA</td>
+                  <td class="td_label td_label_width">Contact Details</td>
+                  <td style="width: 30%;">Home Primary: 3704 Irish Lane<br/>Atlanta, GA 30301<br/>US<br/>Tel Home Primary: +1(608)-758-0515</td>
+               </tr>
+               <tr>
+                  <td class="td_label td_label_width">Date of Birth</td>
+                  <td style="width: 30%;">October  22, 1962 (57yr)</td>
+                  <td class="td_label td_label_width">Gender</td>
+                  <td>Female</td>
+               </tr>
+               <tr>
+                  <td class="td_label td_label_width">Race</td>
+                  <td style="width: 30%;">Black or African American</td>
+                  <td class="td_label td_label_width">Ethnicity</td>
+                  <td>Not Hispanic or Latino</td>
+               </tr>
+               <tr>
+                  <td class="td_label td_label_width">Patient-IDs</td>
+                  <td>
+                     <span title="US Social Security Administration">123456789 (SSN)</span>
+                     <br/>
+                     <span>404.1 (1.3.6.1.4.1.115)</span>
+                  </td>
+                  <td class="td_label td_label_width">Language Communication</td>
+                  <td colspan="3">
+                     <div>en, Expressed spoken, Excellent, preferred: yes</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="td_label td_label_width">Provider Organization</td>
+                  <td style="width: 30%;">
+                     <div>Wood River Health Services, LLC</div>
+                     <table class="table_simple">
+                        <tbody>
+                           <tr>
+                              <td class="td_label">ID</td>
+                              <td>
+                                 <span title="National Provider ID">9999999999 (NPI)</span>, <span title="DT.org CE (Covered Entity)">jgrue@directaddress.net (1.3.6.1.4.1.41179.2.1)</span>, <span title="River Valley Health Services local patient Medical Record Number">2.16.840.1.113883.1.111.12345</span>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </td>
+                  <td class="td_label td_label_width">Contact Details (Organization)</td>
+                  <td style="width: 30%;">800 Spring St.<br/>Atlanta, GA 30308<br/>US<br/>Tel Workplace: +1-843-555-2234, Mail Workplace: jgrue@directaddress.net</td>
+               </tr>
+            </tbody>
+         </table>
+         <div class="separator"> </div>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Documentation Of - care provision</td>
+                  <td style="width: 80%;" colspan="3">First postoperative examination and eye dressing (procedure)March  6, 2020 10:30AM -0500 - 11:30AM -0500</td>
+               </tr>
+               <tr>
+                  <td class="td_label td_label_width">Performer - </td>
+                  <td style="width: 30%;">Stan  STEDYHAN</td>
+                  <td class="td_label td_label_width">Contact Details</td>
+                  <td>Workplace: 33 Front St.<br/>Atlanta, GA 30308<br/>USA<br/>Tel Workplace: +1-843-555-9898</td>
+               </tr>
+            </tbody>
+         </table>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Encounter</td>
+                  <td style="width: 30%;">
+                     <table class="table_simple">
+                        <tbody>
+                           <tr>
+                              <td class="td_label">ID</td>
+                              <td>
+                                 <span>a5b48f7f-981c-480f-aa35-fb14a34e528e</span>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </td>
+                  <td class="td_label td_label_width">Encounter Date</td>
+                  <td>March  6, 2020 10:30AM -0500 - 11:30AM -0500</td>
+               </tr>
+               <tr>
+                  <td class="td_label td_label_width">Encounter Location</td>
+                  <td colspan="3">Stedyhan Ophthalmology (Workplace: United States<br/>Atlanta, GA 30308<br/>33 Front St.)</td>
+               </tr>
+               <tr>
+                  <td class="td_label td_label_width">Responsible Party</td>
+                  <td style="width: 30%;">Legal: STEDYHAN  Stan</td>
+                  <td class="td_label td_label_width">Contact Details</td>
+                  <td>Workplace: United States<br/>Atlanta, GA 30308<br/>33 Front St.<br/>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="td_label td_label_width">attender</td>
+                  <td style="width: 30%;">Legal: PREOP  Lucy</td>
+                  <td class="td_label td_label_width">Contact Details</td>
+                  <td>Workplace: United States<br/>Atlanta, GA 30308<br/>33 Front St.<br/>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <div class="separator"> </div>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width" rowspan="2">Author</td>
+                  <td style="width: 30%;" rowspan="2">Dr Stan  STEDYHAN, Organization: Stedyhan Ophthalmology, LLC</td>
+                  <td class="td_label td_label_width">Contact Details</td>
+                  <td>33 Front St.<br/>Atlanta, Georgia 30308<br/>US<br/>Tel Workplace: +1-843-555-9898</td>
+               </tr>
+               <tr>
+                  <td class="td_label td_label_width">Contact Details (Organization)</td>
+                  <td>33 Front St.<br/>Atlanta, Georgia 30308<br/>US<br/>Tel Workplace: +1-843-555-9898</td>
+               </tr>
+            </tbody>
+         </table>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Information Recipient</td>
+                  <td style="width: 30%;">Yul  SEEMORE</td>
+                  <td class="td_label td_label_width">Contact Details</td>
+                  <td>Workplace: 25 Fall St.<br/>Atlanta, GA 30308<br/>USA<br/>Tel Workplace: +1-843-555-9876</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </body>
+</html>

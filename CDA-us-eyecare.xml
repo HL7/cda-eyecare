@@ -6,20 +6,27 @@
 <artifactPageExtension value="-mappings"/>
 <artifact id="ValueSet/AidToVisionCodes" key="ValueSet-AidToVisionCodes" name="Aid to Vision Codes"/>
 <artifact id="StructureDefinition/AidToVisionObservation" key="StructureDefinition-AidToVisionObservation" name="AidToVisionObservation"/>
-<artifact id="CodeSystem/DryEyeTestAssessmentCodes" key="CodeSystem-DryEyeTestAssessmentCodes" name="Dry Eye Test Assessment Code System"/>
-<artifact id="ValueSet/DryEyeTestAssessmentCodes" key="ValueSet-DryEyeTestAssessmentCodes" name="Dry Eye Test Assessment Value Set"/>
-<artifact id="StructureDefinition/DryEyeTestObservation" key="StructureDefinition-DryEyeTestObservation" name="DryEyeTestObservation"/>
-<artifact id="StructureDefinition/DryEyeTestsOrganizer" key="StructureDefinition-DryEyeTestsOrganizer" name="DryEyeTestOrganizer"/>
+<artifact id="ValueSet/DiagnosticAssessmentEyeTestCodes" key="ValueSet-DiagnosticAssessmentEyeTestCodes" name="Diagnostic Assessment Eye Test Value Set"/>
+<artifact id="StructureDefinition/DiagnosticAssessmentEyeTestObservation" key="StructureDefinition-DiagnosticAssessmentEyeTestObservation" name="DiagnosticAssessmentEyeTestObservation"/>
+<artifact id="StructureDefinition/DiagnosticAssessmentEyeTestOrganizer" key="StructureDefinition-DiagnosticAssessmentEyeTestOrganizer" name="DiagnosticAssessmentEyeTestOrganizer"/>
+<artifact id="CodeSystem/DryEyeQuestionnaireCodes" key="CodeSystem-DryEyeQuestionnaireCodes" name="Dry Eye Questionnaire Code System"/>
+<artifact id="ValueSet/DryEyeQuestionnaireCodes" key="ValueSet-DryEyeQuestionnaireCodes" name="Dry Eye Questionnaire Value Set"/>
 <artifact id="ValueSet/EyecareTargetSiteCodes" key="ValueSet-EyecareTargetSiteCodes" name="Eyecare Target Site Codes"/>
 <artifact id="StructureDefinition/EyecareExamSection" key="StructureDefinition-EyecareExamSection" name="EyecareExamSection"/>
+<artifact id="ValueSet/PosteriorSegmentObservationCodes" key="ValueSet-PosteriorSegmentObservationCodes" name="Posterior Segment Observation Codes"/>
+<artifact id="ValueSet/PosteriorSegmentOrganizerCodes" key="ValueSet-PosteriorSegmentOrganizerCodes" name="Posterior Segment Organizer Codes"/>
+<artifact id="StructureDefinition/PosteriorSegmentObservation" key="StructureDefinition-PosteriorSegmentObservation" name="PosteriorSegmentObservation"/>
+<artifact id="StructureDefinition/PosteriorSegmentOrganizer" key="StructureDefinition-PosteriorSegmentOrganizer" name="PosteriorSegmentOrganizer"/>
 <artifact id="ValueSet/RefractionMethodCodes" key="ValueSet-RefractionMethodCodes" name="Refraction Method Codes"/>
 <artifact id="ValueSet/RefractionObservationCodes" key="ValueSet-RefractionObservationCodes" name="Refraction Observation Codes"/>
 <artifact id="StructureDefinition/RefractionObservation" key="StructureDefinition-RefractionObservation" name="RefractionObservation"/>
 <artifact id="StructureDefinition/RefractionOrganizer" key="StructureDefinition-RefractionOrganizer" name="RefractionOrganizer"/>
 <artifact id="ValueSet/VisualAcuityMethodCodes" key="ValueSet-VisualAcuityMethodCodes" name="Visual Acuity Method Codes"/>
 <artifact id="ValueSet/VisualAcuityObservationCodes" key="ValueSet-VisualAcuityObservationCodes" name="Visual Acuity Observation Codes"/>
+<artifact id="ValueSet/VisualAcuityOrganizerCodes" key="ValueSet-VisualAcuityOrganizerCodes" name="Visual Acuity Organizer Codes"/>
 <artifact id="StructureDefinition/VisualAcuityObservation" key="StructureDefinition-VisualAcuityObservation" name="VisualAcuityObservation"/>
 <artifact id="StructureDefinition/VisualAcuityOrganizer" key="StructureDefinition-VisualAcuityOrganizer" name="VisualAcuityOrganizer"/>
+<artifact id="StructureDefinition/VisualAcuityTestUnitObservation" key="StructureDefinition-VisualAcuityTestUnitObservation" name="VisualAcuityTestUnitObservation"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>

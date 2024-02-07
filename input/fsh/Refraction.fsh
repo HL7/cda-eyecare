@@ -1,5 +1,5 @@
-Alias: $ResultOrganizer = http://hl7.org/cda/us/ccda/StructureDefinition/2.16.840.1.113883.10.20.22.4.1
-Alias: $ResultObservation = http://hl7.org/cda/us/ccda/StructureDefinition/2.16.840.1.113883.10.20.22.4.2
+Alias: $ResultOrganizer = http://hl7.org/cda/us/ccda/StructureDefinition/ResultOrganizer
+Alias: $ResultObservation = http://hl7.org/cda/us/ccda/StructureDefinition/ResultObservation
 Alias: SNOMED = http://snomed.info/sct
 
 Profile: RefractionOrganizer
@@ -8,9 +8,9 @@ Id: RefractionOrganizer
 Description: "A constraint on ResultOrganizer that allows for RefractionObservations."
 * ^kind = #logical
 * code.codeSystem = "2.16.840.1.113883.6.96"
-* code.code = "251794006"
+* code.code = #251794006
 * code.displayName = "Refraction measurement"
-* component[component1].observation only RefractionObservation
+* component[resultObs].observation only RefractionObservation
 
 Profile: RefractionObservation
 Parent: $ResultObservation
@@ -22,6 +22,7 @@ Description: "A constraint on ResultObservation that defines eyecare refraction 
 * targetSiteCode.code from EyecareTargetSiteCodes (required)
 * methodCode 1..1 MS
 * methodCode.code from RefractionMethodCodes (required)
+* value[coded] 0..0
 * value only PQ or ST
 
 ValueSet: RefractionObservationCodes
@@ -29,6 +30,7 @@ Id: RefractionObservationCodes
 Title: "Refraction Observation Codes"
 Description: "Codes that represent different types of refraction measurement tests."
 * ^experimental = true
+* SNOMED#277889008
 * SNOMED#251795007
 * SNOMED#251797004
 * SNOMED#251799001
