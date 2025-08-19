@@ -6,3 +6,10 @@
 
 Rule eld-20: 'The first component of the path should be UpperCamelCase.%
 Rule eld-24: 'pattern[x] should be used rather than fixed[x]%
+Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+Pinned the version of%
+The definition for the element 'Organizer.sdtcCategory' binds to the value set 'http://hl7.org/fhir/ValueSet/diagnostic-service-sections' which is experimental, but this structure is not labeled as experimental
+The definition for the element 'Observation.code.code' binds to the value set 'http://hl7.org/cda/us/eyecare/ValueSet/PosteriorSegmentObservationCodes' which is experimental, but this structure is not labeled as experimental
+Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+The html source has duplicate anchor Ids:%
+The <script> containing the javascript%

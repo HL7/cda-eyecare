@@ -9,8 +9,8 @@
 <artifact id="ValueSet/DiagnosticAssessmentEyeTestCodes" key="ValueSet-DiagnosticAssessmentEyeTestCodes" name="Diagnostic Assessment Eye Test Value Set"/>
 <artifact id="StructureDefinition/DiagnosticAssessmentEyeTestObservation" key="StructureDefinition-DiagnosticAssessmentEyeTestObservation" name="DiagnosticAssessmentEyeTestObservation"/>
 <artifact id="StructureDefinition/DiagnosticAssessmentEyeTestOrganizer" key="StructureDefinition-DiagnosticAssessmentEyeTestOrganizer" name="DiagnosticAssessmentEyeTestOrganizer"/>
-<artifact id="CodeSystem/DryEyeQuestionnaireCodes" key="CodeSystem-DryEyeQuestionnaireCodes" name="Dry Eye Questionnaire Code System"/>
-<artifact id="ValueSet/DryEyeQuestionnaireCodes" key="ValueSet-DryEyeQuestionnaireCodes" name="Dry Eye Questionnaire Value Set"/>
+<artifact id="CodeSystem/DryEyeQuestionnaireCodeSystem" key="CodeSystem-DryEyeQuestionnaireCodeSystem" name="Dry Eye Questionnaire Code System"/>
+<artifact id="ValueSet/DryEyeQuestionnaireValueSet" key="ValueSet-DryEyeQuestionnaireValueSet" name="Dry Eye Questionnaire Value Set"/>
 <artifact id="ValueSet/EyecareTargetSiteCodes" key="ValueSet-EyecareTargetSiteCodes" name="Eyecare Target Site Codes"/>
 <artifact id="StructureDefinition/EyecareExamSection" key="StructureDefinition-EyecareExamSection" name="EyecareExamSection"/>
 <artifact id="ValueSet/PosteriorSegmentObservationCodes" key="ValueSet-PosteriorSegmentObservationCodes" name="Posterior Segment Observation Codes"/>

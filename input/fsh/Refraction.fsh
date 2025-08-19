@@ -7,21 +7,25 @@ Parent: $ResultOrganizer
 Id: RefractionOrganizer
 Description: "A constraint on ResultOrganizer that allows for RefractionObservations."
 * ^kind = #logical
+* insert LogicalModelTemplate(refraction-org, 2.16.840.1.113883.10.20.22.4.1.993, 2023-05-01)
+* classCode = #BATTERY (exactly)
 * code.codeSystem = "2.16.840.1.113883.6.96"
 * code.code = #251794006
 * code.displayName = "Refraction measurement"
 * component[resultObs].observation only RefractionObservation
+* component[specimenProc] 0..0
 
 Profile: RefractionObservation
 Parent: $ResultObservation
 Id: RefractionObservation
 Description: "A constraint on ResultObservation that defines eyecare refraction measurements."
 * ^kind = #logical
-* code.code from RefractionObservationCodes (required)
+* insert LogicalModelTemplate(refraction-obs, 2.16.840.1.113883.10.20.22.4.2.993, 2023-05-01)
+* code from RefractionObservationCodes (required)
 * targetSiteCode 1..1 MS
-* targetSiteCode.code from EyecareTargetSiteCodes (required)
+* targetSiteCode from EyecareTargetSiteCodes (required)
 * methodCode 1..1 MS
-* methodCode.code from RefractionMethodCodes (required)
+* methodCode from RefractionMethodCodes (required)
 * value[coded] 0..0
 * value only PQ or ST
 
@@ -29,7 +33,7 @@ ValueSet: RefractionObservationCodes
 Id: RefractionObservationCodes
 Title: "Refraction Observation Codes"
 Description: "Codes that represent different types of refraction measurement tests."
-* ^experimental = true
+* ^experimental = false
 * SNOMED#277889008
 * SNOMED#251795007
 * SNOMED#251797004
@@ -45,7 +49,7 @@ ValueSet: RefractionMethodCodes
 Id: RefractionMethodCodes
 Title: "Refraction Method Codes"
 Description: "Methods that are used to measure refraction."
-* ^experimental = true
+* ^experimental = false
 * SNOMED#397277005
 * SNOMED#297276001
 * SNOMED#297524001

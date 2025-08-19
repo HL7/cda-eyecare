@@ -7,6 +7,7 @@ Parent: $ResultOrganizer
 Id: PosteriorSegmentOrganizer
 Description: "A constraint on ResultOrganizer that allows for observations about the Posterior Segment."
 * ^kind = #logical
+* insert LogicalModelTemplate(postsegment-org, 2.16.840.1.113883.10.20.22.4.1.992, 2023-05-01)
 * code.code from PosteriorSegmentOrganizerCodes (required)
 * component[resultObs].observation only PosteriorSegmentObservation
 
@@ -15,6 +16,7 @@ Parent: $ResultObservation
 Id: PosteriorSegmentObservation
 Description: "A constraint on ResultObservation that defines posterior segment structure observations."
 * ^kind = #logical
+* insert LogicalModelTemplate(postsegment-obs, 2.16.840.1.113883.10.20.22.4.2.992, 2023-05-01)
 * code.code from PosteriorSegmentObservationCodes (required)
 * targetSiteCode 1..1 MS
 * targetSiteCode.code from EyecareTargetSiteCodes (required)
@@ -26,7 +28,7 @@ ValueSet: PosteriorSegmentOrganizerCodes
 Id: PosteriorSegmentOrganizerCodes
 Title: "Posterior Segment Organizer Codes"
 Description: "Codes that represent different types of posterior segment batteries."
-* ^experimental = true
+* ^experimental = false
 * SNOMED#1230022000
 * SNOMED#81016008
 * SNOMED#45950005
@@ -37,7 +39,7 @@ ValueSet: PosteriorSegmentObservationCodes
 Id: PosteriorSegmentObservationCodes
 Title: "Posterior Segment Observation Codes"
 Description: "Codes that represent different types of posterior segment tests."
-* ^experimental = true
+* ^experimental = false
 * SNOMED#39832008
 * SNOMED#247132001
 * SNOMED#247133006
